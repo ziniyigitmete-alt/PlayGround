@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+  <meta name="theme-color" content="#071b3a">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%23071b3a'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='sans-serif' font-size='42' font-weight='900' font-style='italic' fill='%235be6df'%3EV%3C/text%3E%3C/svg%3E">
+  <title>Velocity Isle — A 2.5D Speed Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="game-shell" aria-label="Velocity Isle game">
+    <canvas id="game" aria-label="Velocity Isle side-scrolling platform game"></canvas>
+    <div class="vignette" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Velocity Isle home"><span class="brand-mark">V</span><span>VELOCITY<span class="brand-sub">ISLE</span></span></a>
+      <div class="stage-label"><span class="live-dot"></span> COASTAL CIRCUIT <b>ZONE 01</b></div>
+      <button id="pauseBtn" class="icon-btn" aria-label="Pause game"><span class="pause-icon">Ⅱ</span></button>
+    </header>
+    <section class="hud" aria-label="Game statistics">
+      <div class="stat time-stat"><span class="stat-icon">◷</span><div><small>TIME</small><strong id="timeValue">00:00</strong></div></div>
+      <div class="stat ring-stat"><span class="ring-icon"></span><div><small>RINGS</small><strong id="ringValue">00</strong></div></div>
+      <div class="stat score-stat"><span class="stat-icon">✦</span><div><small>SCORE</small><strong id="scoreValue">000000</strong></div></div>
+    </section>
+    <div class="speed-meter"><span>SPEED</span><div class="meter-track"><i id="speedFill"></i></div><b id="speedLabel">0</b></div>
+    <div class="toast" id="toast" aria-live="polite"></div>
+    <div class="overlay" id="startOverlay">
+      <div class="panel start-panel">
+        <div class="eyebrow"><i></i> A HIGH-SPEED PLATFORMING ADVENTURE</div>
+        <h1>FIND YOUR<br><em>FLOW.</em></h1>
+        <p>Race across sunlit shores, collect rings, and keep the island's wild energy alive.</p>
+        <button class="primary-btn" id="startBtn">START RUN <span>→</span></button>
+        <div class="control-hint"><span>← →</span> MOVE <i></i><span>SPACE</span> JUMP <i></i><span>SHIFT</span> BOOST</div>
+      </div>
+      <div class="start-deco deco-orb"></div>
+      <div class="start-deco deco-star">✦</div>
+      <div class="start-deco deco-line"></div>
+    </div>
+    <div class="overlay hidden" id="pauseOverlay">
+      <div class="panel mini-panel"><div class="eyebrow"><i></i> TAKE A BREATHER</div><h2>PAUSED</h2><p>Your island run is waiting.</p><button class="primary-btn" id="resumeBtn">KEEP MOVING <span>→</span></button></div>
+    </div>
+    <div class="overlay hidden" id="endOverlay">
+      <div class="panel mini-panel"><div class="eyebrow"><i></i> ZONE CLEAR</div><h2 id="endTitle">NICE RUN!</h2><p id="endCopy">The coast is yours.</p><div class="end-stats"><span>RINGS <b id="endRings">00</b></span><span>SCORE <b id="endScore">000000</b></span></div><button class="primary-btn" id="restartBtn">RUN IT BACK <span>↻</span></button></div>
+    </div>
+    <nav class="touch-controls" aria-label="Touch game controls">
+      <div class="move-pad"><button data-control="left" aria-label="Move left">‹</button><button data-control="right" aria-label="Move right">›</button></div>
+      <div class="action-pad"><button class="boost-control" data-control="boost" aria-label="Boost">✦</button><button class="jump-control" data-control="jump" aria-label="Jump">↑</button></div>
+    </nav>
+    <footer class="bottom-note"><span>RUN FREE</span><span class="footer-line"></span><span>EST. 1994 / NEVER SLOW DOWN</span></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
